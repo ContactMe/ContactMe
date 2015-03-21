@@ -60,6 +60,7 @@
     <div class="contact-actions clearfix">
       <div class="button-group pull-right">
         {{#link-to "contact.edit" classNames="btn btn-sm btn-primary"}}Edit{{/link-to}}
+        <button class="btn btn-sm btn-warning" {{action "deleteContact" this}}>Delete</button>
       </div>
     </div>
 
