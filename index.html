@@ -57,10 +57,17 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="contact">
+    <div class="contact-actions clearfix">
+      <div class="button-group pull-right">
+        {{#link-to "contact.edit" classNames="btn btn-sm btn-primary"}}Edit{{/link-to}}
+      </div>
+    </div>
+
     <div class="page-header">
       <h2>{{name}}</h2>
     </div>
     <p>{{relationship}}</p>
+    {{outlet}}
   </script>
 
   <script type="text/x-handlebars" data-template-name="contacts/new">
@@ -72,22 +79,7 @@
       </div>
 
       <div class="panel-body">
-        <form class="form-horizontal">
-
-          <div class="form-group">
-            <label for="contactName" class="col-lg-2 control-label">Name</label>
-            <div class="col-lg-10">
-              {{input value=name id="contactName" classNames="form-controll"}}
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="contactRelationship" class="col-lg-2 control-label">Relationship</label>
-            <div class="col-lg-10">
-              {{input value=relationship id="contactRelationship" classNames="form-controll"}}
-            </div>
-          </div>
-
-        </form>
+        {{partial "contactForm"}}
       </div>
 
       <div class="panel-footer clearfix">
@@ -97,6 +89,45 @@
         </div>
       </div>
     </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="contact/edit">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+          Edit Contact
+        </h1>
+      </div>
+
+      <div class="panel-body">
+        {{partial "contactForm"}}
+      </div>
+
+      <div class="panel-footer clearfix">
+        <div class="btn-group pull-right">
+          {{#link-to "contact.index" this classNames="btn btn-sm btn-primary"}}Done{{/link-to}}
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_contactForm">
+    <form class="form-horizontal">
+
+      <div class="form-group">
+        <label for="contactName" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          {{input value=name id="contactName" classNames="form-controll"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contactRelationship" class="col-lg-2 control-label">Relationship</label>
+        <div class="col-lg-10">
+          {{input value=relationship id="contactRelationship" classNames="form-controll"}}
+        </div>
+      </div>
+
+    </form>
   </script>
 </body>
 </html>
