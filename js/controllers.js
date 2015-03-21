@@ -1,4 +1,15 @@
 
+ContactMe.ContactController = Ember.ObjectController.extend({
+  needs: ['contacts'],
+  actions: {
+    deleteContact: function(model) {
+      var contacts = this.get('controllers.contacts');
+      contacts.removeObject(model);
+      this.transitionToRoute('contacts');
+    }
+  }
+});
+
 ContactMe.ContactsNewController = Ember.ObjectController.extend({
   needs: ['contacts'],
   actions: {
