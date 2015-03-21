@@ -6,5 +6,6 @@ ContactMe = Ember.Application.create({
 ContactMe.Router.map(function() {
   this.resource('contacts', function() {
     this.resource('contact', { path: ':contact_id' })
+    this.route('new');
   });
 })
