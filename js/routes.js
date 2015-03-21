@@ -35,3 +35,9 @@ ContactMe.ContactsNewRoute = Ember.Route.extend({
     }
   }
 });
+
+ContactMe.ContactEditRoute = Ember.Route.extend({
+  model: function() {
+    return this.modelFor('contact');
+  }
+});
