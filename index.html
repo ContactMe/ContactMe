@@ -71,6 +71,14 @@
     {{outlet}}
   </script>
 
+  <script type="text/x-handlebars" data-template-name="contacts/index">
+    <div class="jumbotron">
+      <h1>Uh oh!</h1>
+      <p>It seems like you do not have any contacts. You should add one.</p>
+      <p>{{#link-to "contacts.new" class="btn btn-primary btn-lg"}}Add Contact{{/link-to}}</p>
+    </div>
+  </script>
+
   <script type="text/x-handlebars" data-template-name="contacts/new">
     <div class="panel panel-default">
       <div class="panel-heading">
