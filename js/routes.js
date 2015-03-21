@@ -25,3 +25,13 @@ ContactMe.ContactsIndexRoute = Ember.Route.extend({
     }
   }
 });
+
+ContactMe.ContactsNewRoute = Ember.Route.extend({
+  model: function(params) {
+    return {
+      id: null,
+      name: null,
+      relationship: null
+    }
+  }
+});
