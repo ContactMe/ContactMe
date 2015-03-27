@@ -28,6 +28,7 @@
   <script src="js/application.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/helpers.js"></script>
 
   <script type="text/x-handlebars" data-template-name="contacts">
   <div class="row">
@@ -71,7 +72,7 @@
     <dl class="dl-horizontal">
       {{#if phoneNumber}}
         <dt>Phone Number:</dt>
-        <dd>{{phoneNumber}}</dd>
+        <dd>{{formatPhoneNumber phoneNumber}}</dd>
       {{/if}}
 
       {{#if email}}
