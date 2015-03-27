@@ -157,14 +157,57 @@
 
       <div class="form-group">
         <label for="contactName" class="col-lg-2 control-label">Name</label>
-        <div class="col-lg-10">
+        <div class="col-lg-6">
           {{input value=name id="contactName" classNames="form-controll"}}
         </div>
       </div>
+
       <div class="form-group">
         <label for="contactRelationship" class="col-lg-2 control-label">Relationship</label>
-        <div class="col-lg-10">
+        <div class="col-lg-6">
           {{input value=relationship id="contactRelationship" classNames="form-controll"}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactPhoneNumber" class="col-lg-2 control-label">Phone Number</label>
+        <div class="col-lg-6">
+          {{input value=phoneNumber id="contactPhoneNumber" classNames="form-controll"}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactEmail" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-6">
+          {{input value=email id="contactEmail" classNames="form-controll"}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactStreetAddress" class="col-lg-2 control-label">Street Address</label>
+        <div class="col-lg-6">
+          {{input value=address.street id="contactStreetAddress" classNames="form-controll"}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactCity" class="col-lg-2 control-label">City</label>
+        <div class="col-lg-6">
+          {{input value=address.city id="contactCity" classNames="form-controll"}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactState" class="col-lg-2 control-label">State</label>
+        <div class="col-lg-6">
+          {{input value=address.state id="contactState" classNames="form-controll"}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactZip" class="col-lg-2 control-label">Zip Code</label>
+        <div class="col-lg-6">
+          {{input value=address.zip id="contactZip" classNames="form-controll"}}
         </div>
       </div>
 
