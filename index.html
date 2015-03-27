@@ -82,20 +82,18 @@
       {{#if address}}
       <dt>Address:</dt>
       <dd>
-        {{#with address}}
         <address>
-          {{#if street}}
-            {{street}}<br />
+          {{#if address.street}}
+            {{address.street}}<br />
           {{/if}}
 
-          {{city}}
-          {{#if state}}, {{/if}}
-          {{state}}
+          {{address.city}}
+          {{#if address.state}}, {{/if}}
+          {{address.state}}
 
-          {{#if zip}}<br >{{/if}}
-          {{zip}}
+          {{#if address.zip}}<br >{{/if}}
+          {{address.zip}}
         </address>
-        {{/with}}
       </dd>
       {{/if}}
     </dl>
