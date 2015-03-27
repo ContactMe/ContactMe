@@ -65,9 +65,41 @@
     </div>
 
     <div class="page-header">
-      <h2>{{name}}</h2>
+      <h2>{{name}} <small>{{relationship}}</small> </h2>
     </div>
-    <p>{{relationship}}</p>
+
+    <dl class="dl-horizontal">
+      {{#if phoneNumber}}
+        <dt>Phone Number:</dt>
+        <dd>{{phoneNumber}}</dd>
+      {{/if}}
+
+      {{#if email}}
+        <dt>Email Address:</dt>
+        <dd>{{email}}</dd>
+      {{/if}}
+
+      {{#if address}}
+      <dt>Address:</dt>
+      <dd>
+        {{#with address}}
+        <address>
+          {{#if street}}
+            {{street}}<br />
+          {{/if}}
+
+          {{city}}
+          {{#if state}}, {{/if}}
+          {{state}}
+
+          {{#if zip}}<br >{{/if}}
+          {{zip}}
+        </address>
+        {{/with}}
+      </dd>
+      {{/if}}
+    </dl>
+
     {{outlet}}
   </script>
 
