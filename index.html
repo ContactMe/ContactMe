@@ -28,6 +28,7 @@
   <script src="js/application.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/components.js"></script>
 
   <script type="text/x-handlebars" data-template-name="contacts">
   <div class="row">
@@ -61,6 +62,10 @@
       <div class="button-group pull-right">
         {{#link-to "contact.edit" classNames="btn btn-sm btn-primary"}}Edit{{/link-to}}
         <button class="btn btn-sm btn-warning" {{action "deleteContact" this}}>Delete</button>
+        {{confirmation-button
+          action="deleteContact"
+          param=content
+          classNames="btn btn-sm btn-warning"}}
       </div>
     </div>
 
@@ -137,6 +142,22 @@
       </div>
 
     </form>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="components/confirmation-button">
+    {{#unless didRequestAction}}
+      {{#if template}}
+        {{yield}}
+      {{else}}
+        Do Some Action
+      {{/if}}
+    {{else}}
+      {{#if confirmationText}}
+        {{confirmationText}}
+      {{else}}
+        Are You Sure?
+      {{/if}}
+    {{/unless}}
   </script>
 </body>
 </html>
