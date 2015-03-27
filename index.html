@@ -61,11 +61,13 @@
     <div class="contact-actions clearfix">
       <div class="button-group pull-right">
         {{#link-to "contact.edit" classNames="btn btn-sm btn-primary"}}Edit{{/link-to}}
-        <button class="btn btn-sm btn-warning" {{action "deleteContact" this}}>Delete</button>
-        {{confirmation-button
+        {{#confirmation-button
           action="deleteContact"
           param=content
+          confirmationText="Click Again to Delete"
           classNames="btn btn-sm btn-warning"}}
+        Delete
+        {{/confirmation-button}}
       </div>
     </div>
 
