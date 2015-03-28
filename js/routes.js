@@ -7,13 +7,13 @@ ContactMe.IndexRoute = Ember.Route.extend({
 
 ContactMe.ContactsRoute = Ember.Route.extend({
   model: function(params) {
-    return FIXTURES;
+    return $.getJSON('/contacts');
   }
 });
 
 ContactMe.ContactRoute = Ember.Route.extend({
   model: function(params) {
-    return FIXTURES.findBy('id', parseInt(params.contact_id));
+    return $.getJSON('/contacts/' + params.contact_id);
   }
 });
 
